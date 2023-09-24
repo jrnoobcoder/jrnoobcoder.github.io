@@ -190,7 +190,7 @@ dl dd:last-child {
 
 /*===== Menu =====*/
 header.header {
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     z-index: 1000;
     background: white;
@@ -217,7 +217,9 @@ header li a{
     text-decoration: none;
     padding: 4px 0;
     position: relative;
+    color: #0a0e17;
 }
+
 header li a:before{
     content: '';
     position: absolute;
@@ -225,9 +227,12 @@ header li a:before{
     left: 0;
     height: 3px;
     width: 0%;
-    background: #347fef;
+    background: navy;
     border-radius: 12px;
     transition: all 0.4s ease;
+}
+header li a:hover{
+    color: navy;
 }
 header li a:hover:before {
     width: 100%;
@@ -271,27 +276,27 @@ header li.forward a:hover:before {
     background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
-    position: relative;
-    height: 600px;
-    top: 84px;
+    /* position: relative; */
+    /* height: 600px; */
+    /* top: 84px; */
 }
 
 .banner-content .banner-info {
     /* position: absolute; */
     /* top: 47%; */
     /* width: 100%; */
-    height: 100%;
+    /* height: 100%; */
     margin-top: 90px;
 }
 .banner-info h1 {
-    font-size: 72px !important;
+    font-size: 72px;
     margin-bottom: 0;
     font-family: sacramento,cursive !important;
     font-weight: bold;
     text-transform: none;
 }
 .banner-info h2 {
-    font-size: 80px;
+    font-size: 74px;
     margin-top: 0;
     line-height: 92px;
     /* margin-left: -8px; */
@@ -307,26 +312,40 @@ header li.forward a:hover:before {
 }
 
 @media (min-width: 768px) and (max-width: 991px){
+    .banner-info h1 {
+        font-size: 63px;
+    }
     .banner-info h2 {
-        font-size: 85px;
+        font-size: 55px;
         line-height: 50px;
     }
 }
 @media (max-width: 991px){
+    .home-banner img{
+        padding: 5%;
+    }
+    .banner-info h3{
+        letter-spacing: 17px;
+    }
     .banner-content .banner-info {
         /* top: 100%; */
         /* margin-top: -220px; */
     }
 }
 @media (max-width: 767px){
+    .banner-info h1 {
+        font-size: 48px;
+    }
     .banner-info h2 {
-        font-size: 50px;
+        font-size: 48px;
         line-height: 25px;
     }
     .banner-content .banner-info {
+        text-align: center;
         top: 100%;
-        /* margin-top: -180px; */
+        margin-top: 0px;
     }
+    
 }
 
 
@@ -349,5 +368,69 @@ header li.forward a:hover:before {
 
 }
 
+
+/* ============About Us Section Start============= */
+section#about-us, section#skill-section{
+    padding: 50px 0px;
+}
+section#about-us {
+    background: aliceblue;
+
+}
+.head-title {
+    font-family: 'Sacramento';
+    font-size: 48px;
+    font-weight: 700;
+    color: crimson;
+    
+}
+.about-intro {
+    font-size: 14px;
+    color: #6e7797;
+    line-height: 26px;
+    margin-bottom: 32px;
+}
+.about-left .subtitle{
+    color: #FF3D4F;
+}
+.aboutus-title {
+    font-size: 66px;
+    margin-bottom: 0;
+    color: #444444;
+    line-height: 1;
+    font-weight: 700;
+    font-family: ui-sans-serif;
+}
+
+.about-btn .about-cv-btn {
+    background: #ff3d4f none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 0;
+    padding: 20px 50px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transition: all 0.3s ease 0s;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+.about-btn .about-cv-btn:hover {
+    background: none;
+    color: #79819e;
+    border-color: #e5e9ff;
+}
+
+
+/* ============About Us Section End============= */
 
 
