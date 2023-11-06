@@ -429,13 +429,13 @@ $allowProductType = $block->getAllowedProductType();
             <!-- < id="element"> -->
                 <div data-role="collapsible" class="accordian_collap_stl">
                     <div data-role="trigger" class="accordian_stl">
-                        <span>DATI GENERALI</span>
+                        <span><?= $escaper->escapeHtml(__('DATI GENERALI')) ?></span>
                     </div>
                 </div>
                 <div data-role="content" class="accordian_content_stl">
 
                     <div class="field field_stl">
-                        <label class="label"><?= $escaper->escapeHtml(__('BRAND')) ?>:</label>
+                        <label class="label"><?= $escaper->escapeHtml(__('Brand')) ?>: </label><span style="color: #EF7C0A; font-weight: 600;"> *<?= $escaper->escapeHtml(__(' VALORE OBBLIGATORIO')) ?></span>
                         <div class="control">
                             <select id="brand" class=" required-entry required-entry select" name="product[brand]">
 
@@ -456,7 +456,7 @@ $allowProductType = $block->getAllowedProductType();
 
 
                     <div class="field field_stl">
-                        <label class="label"><?= $escaper->escapeHtml(__('BRAND MODELLO')) ?>:</label>
+                        <label class="label"><?= $escaper->escapeHtml(__('Model')) ?>: </label><span style="color: #EF7C0A; font-weight: 600;"> *<?= $escaper->escapeHtml(__(' VALORE OBBLIGATORIO')) ?></span>
                         <div class="control">
                             <select id="brand_modello" class=" required-entry required-entry select" name="product[brand_modello]">
 
@@ -477,7 +477,7 @@ $allowProductType = $block->getAllowedProductType();
 
 
                     <div class="field field_stl">
-                        <label class="label"><?= $escaper->escapeHtml(__('MODELLO NON PRESENTE')) ?>:</label>
+                        <label class="label"><?= $escaper->escapeHtml(__('Model not present')) ?>:</label>
                         <div class="control">
                             <input name="product[modello_non_presente]" id="modello_non_presente" class="validate-length maximum-length-64 input-text" type="text" value="<?= $escaper->escapeHtml($product_coll->getModelloNonPresente()); ?>" />
                         </div>
@@ -485,7 +485,7 @@ $allowProductType = $block->getAllowedProductType();
 
 
                     <div class="field field_stl">
-                        <label class="label"><?= $escaper->escapeHtml(__('NUMERO DI REFERENZA')) ?>:</label>
+                        <label class="label"><?= $escaper->escapeHtml(__('Reference number')) ?>:</label>
                         <div class="control">
                             <div class="control">
                                 <input name="product[numero_di_referenza]" id="numero_di_referenza" class="validate-length maximum-length-64 input-text" type="text" value="<?= $escaper->escapeHtml($product_coll->getNumeroDiReferenza()); ?>" />
@@ -497,7 +497,7 @@ $allowProductType = $block->getAllowedProductType();
 
             
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('PROVENIENZA')) ?>: <span style="color: #FF0004">*</span></label>
+    <label class="label"><?= $escaper->escapeHtml(__('Country')) ?>: <span style="color: #EF7C0A; font-weight: 600;"> *<?= $escaper->escapeHtml(__(' VALORE OBBLIGATORIO')) ?></span></label>
 	<div class="control">
                             <select id="bandiera" class=" required-entry required-entry select" name="product[bandiera]">
 
@@ -518,11 +518,11 @@ $allowProductType = $block->getAllowedProductType();
 
    
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('GENERE')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Gender')) ?>:</label>
     <div class="control">
         <select id="genere" class="select" name="product[genere]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
-             <?php
+            <?php
             $product_attr = $helper->getAttrDropdownOptions('genere');
             foreach ($product_attr as $key => $value) {
                 $selected = ($key == $product_coll->getGenere()) ? "selected='selected'" : "";
@@ -539,7 +539,7 @@ $allowProductType = $block->getAllowedProductType();
 
 
                     <div class="field field_stl">
-                        <label class="label"><?= $escaper->escapeHtml(__('ANNO DI PRODUZIONE')) ?>:</label>
+                        <label class="label"><?= $escaper->escapeHtml(__('Year of production')) ?>:</label>
                         <div class="control">
                             <input name="product[anno_di_produzione]" id="anno_di_produzione" class="validate-length maximum-length-64 input-text" type="text" value="<?= $escaper->escapeHtml($product_coll->getAnnoDiProduzione()); ?>" />
                         </div>
@@ -547,7 +547,7 @@ $allowProductType = $block->getAllowedProductType();
 
 
                     <div class="field field_stl">
-                        <label class="label"><?= $escaper->escapeHtml(__('CONDIZIONE')) ?>:</label> <span style="color: #FF0004">*</span></label>
+                        <label class="label"><?= $escaper->escapeHtml(__('Condition')) ?>:</label> <span style="color: #EF7C0A; font-weight: 600;"> *<?= $escaper->escapeHtml(__(' VALORE OBBLIGATORIO')) ?></span></label>
                         <div class="control">
                             <select id="condizione" class=" required-entry required-entry select" name="product[condizione]">
 
@@ -568,7 +568,7 @@ $allowProductType = $block->getAllowedProductType();
 
 
                     <div class="field field_stl">
-                        <label class="label"><?= $escaper->escapeHtml(__('CORREDO')) ?>:</label> <span style="color: #FF0004">*</span></label>
+                        <label class="label"><?= $escaper->escapeHtml(__('Extras')) ?>: </label> <span style="color: #EF7C0A; font-weight: 600;"> *<?= $escaper->escapeHtml(__(' VALORE OBBLIGATORIO')) ?></span></label>
                         <div class="control">
                             <select id="corredo" class=" required-entry required-entry select" name="product[corredo]">
 
@@ -590,7 +590,7 @@ $allowProductType = $block->getAllowedProductType();
 
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('CARICA')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Winding')) ?>:</label>
     <div class="control">
         <select id="carica" class="select" name="product[carica]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -609,7 +609,7 @@ $allowProductType = $block->getAllowedProductType();
 
 
                     <div class="field field_stl">
-                        <label class="label"><?= $escaper->escapeHtml(__('DIAMETRO')) ?>:</label>
+                        <label class="label"><?= $escaper->escapeHtml(__('Watch diameter')) ?>:</label>
                         <div class="control">
                             <input name="product[diametro]" id="diametro" class="validate-length maximum-length-64 input-text" type="text" value="<?= $escaper->escapeHtml($product_coll->getDiametro()); ?>" />
                         </div>
@@ -623,7 +623,7 @@ $allowProductType = $block->getAllowedProductType();
 
            <div class="field field_stl" >     
                <label class="field-label" for="sponsorizzato"><span>
-            <?= $escaper->escapeHtml(__('SPONSORIZZATO'))?></span></label>                 					 
+            <?= $escaper->escapeHtml(__('Sponsored'))?></span></label>                 					 
 					<div class="field-control">
                          <div class="field-control sponsorizzato" data-role="sponsorizzato">
                              <div class="field-control-group">
@@ -639,7 +639,7 @@ $allowProductType = $block->getAllowedProductType();
                                                  <?php endif; ?>
                                                           >
                                                <label class="field-label" for="sponsorizzato">
-                                                <span>Yes</span>
+                                                <span><?= $escaper->escapeHtml(__('Yes')) ?></span>
                                                </label>
                                      </div>
                                    <div class="field field-option">
@@ -651,7 +651,7 @@ $allowProductType = $block->getAllowedProductType();
                                                   <?php endif; ?>
                                                       >
                                                  <label class="field-label" for="sponsorizzato">
-                                                    <span>No</span>
+                                                    <span><?= $escaper->escapeHtml(__('No')) ?></span>
                                                  </label>
                                            </div>
                                    </div>
@@ -664,13 +664,13 @@ $allowProductType = $block->getAllowedProductType();
 
                 <div data-role="collapsible" class="accordian_collap_stl">
                     <div data-role="trigger" class="accordian_stl">
-                        <span>CASSA</span>
+                        <span><?= $escaper->escapeHtml(__('CASSA')) ?></span>
                     </div>
                 </div>
                 <div data-role="content" class="accordian_content_stl">
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('MATERIALE CASSA')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Case material')) ?>:</label>
     <div class="control">
         <select id="materiale_cassa" class="select" name="product[materiale_cassa]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -688,7 +688,7 @@ $allowProductType = $block->getAllowedProductType();
 </div>
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('MATERIALE LUNETTA')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Bezel material')) ?>:</label>
     <div class="control">
         <select id="materiale_lunetta" class="select" name="product[materiale_lunetta]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -706,7 +706,7 @@ $allowProductType = $block->getAllowedProductType();
 </div>
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('VETRO')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Glass')) ?>:</label>
     <div class="control">
         <select id="vetro" class="select" name="product[vetro]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -724,7 +724,7 @@ $allowProductType = $block->getAllowedProductType();
 </div>
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('IMPERMEABILE')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Waterproof')) ?>:</label>
     <div class="control">
         <select id="impermeabile" class="select" name="product[impermeabile]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -743,8 +743,8 @@ $allowProductType = $block->getAllowedProductType();
 		
 
                     <div class="field field_stl">
-                        <label class="label"><?= $escaper->escapeHtml(__('ALTRE CARATTERISTICHE')) ?>:</label> 
-                <span style="color: #EF7C0A; font-weight: bold;">Selezioni multiple Ctrl+click</span>
+                        <label class="label"><?= $escaper->escapeHtml(__('Additional settings')) ?>:</label> 
+                <span style="color: #EF7C0A; font-weight: bold;"><?= $escaper->escapeHtml(__('Selezioni multiple Ctrl+click')) ?></span>
                         <div class="control">
 
                             <select id="altre_caratteristiche" class=" select" name="product[altre_caratteristiche][]" multiple>
@@ -775,7 +775,7 @@ $allowProductType = $block->getAllowedProductType();
 
                 <div data-role="collapsible" class="accordian_collap_stl">
                     <div data-role="trigger" class="accordian_stl">
-                        <span>QUADRANTE e LANCETTE</span>
+                        <span><?= $escaper->escapeHtml(__('QUADRANTE e LANCETTE')) ?></span>
                     </div>
                 </div>
                 <div data-role="content" class="accordian_content_stl">
@@ -784,7 +784,7 @@ $allowProductType = $block->getAllowedProductType();
 					
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('QUADRANTE')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Dial features')) ?>:</label>
     <div class="control">
         <select id="quadrante" class="select" name="product[quadrante]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -804,7 +804,7 @@ $allowProductType = $block->getAllowedProductType();
 				
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('INDICI SU QUADRANTE')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Index or numerals on the dial')) ?>:</label>
     <div class="control">
         <select id="indici_su_quadrante" class="select" name="product[indici_su_quadrante]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -823,7 +823,7 @@ $allowProductType = $block->getAllowedProductType();
 				
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('COLORE QUADRANTE')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Dial color')) ?>:</label>
     <div class="control">
         <select id="colore_quadrante" class="select" name="product[colore_quadrante]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -842,7 +842,7 @@ $allowProductType = $block->getAllowedProductType();
 				
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('CARATTERISTICHE LANCETTE')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Hand features')) ?>:</label>
     <div class="control">
         <select id="caratteristiche_lancette" class="select" name="product[caratteristiche_lancette]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -865,14 +865,14 @@ $allowProductType = $block->getAllowedProductType();
 
                 <div data-role="collapsible" class="accordian_collap_stl">
                     <div data-role="trigger" class="accordian_stl">
-                        <span>CINTURINO</span>
+                        <span><?= $escaper->escapeHtml(__('CINTURINO')) ?></span>
                     </div>
                 </div>
                 <div data-role="content" class="accordian_content_stl">
 			
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('MATERIALE BRACCIALE/CINTURINO')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Strap/Bracelet material')) ?>:</label>
     <div class="control">
         <select id="materiale_cinturino" class="select" name="product[materiale_cinturino]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -891,7 +891,7 @@ $allowProductType = $block->getAllowedProductType();
 			
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('FIBIA')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Buckle')) ?>:</label>
     <div class="control">
         <select id="fibia" class="select" name="product[fibia]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -910,7 +910,7 @@ $allowProductType = $block->getAllowedProductType();
 			
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('COLORE CINTURINO')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Strap color')) ?>:</label>
     <div class="control">
         <select id="colore_cinturino" class="select" name="product[colore_cinturino]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -929,7 +929,7 @@ $allowProductType = $block->getAllowedProductType();
 			
 
 <div class="field field_stl">
-    <label class="label"><?= $escaper->escapeHtml(__('CHIUSURA CINTURINO')) ?>:</label>
+    <label class="label"><?= $escaper->escapeHtml(__('Bracelet clasp')) ?>:</label>
     <div class="control">
         <select id="chiusura_cinturino" class="select" name="product[chiusura_cinturino]">
             <option value=""><?= $escaper->escapeHtml(__('Seleziona')) ?></option>
@@ -955,14 +955,14 @@ $allowProductType = $block->getAllowedProductType();
 
                 <div data-role="collapsible" class="accordian_collap_stl">
                     <div data-role="trigger" class="accordian_stl">
-                        <span>FUNZIONI</span>
+                        <span><?= $escaper->escapeHtml(__('FUNZIONI')) ?></span>
                     </div>
                 </div>
                 <div data-role="content" class="accordian_content_stl">
 
                     <div class="field field_stl">
-                        <label class="label"><?= $escaper->escapeHtml(__('FUNZIONI')) ?>:</label> 
-                <span style="color: #EF7C0A; font-weight: bold;">Selezioni multiple Ctrl+click</span>
+                        <label class="label"><?= $escaper->escapeHtml(__('Complications')) ?>:</label> 
+                <span style="color: #EF7C0A; font-weight: bold;"><?= $escaper->escapeHtml(__('Selezioni multiple Ctrl+click')) ?></span>
                         <div class="control">
                             <select id="funzioni" class="select" name="product[funzioni][]" multiple>
 
@@ -1111,18 +1111,6 @@ $allowProductType = $block->getAllowedProductType();
         </div>
     </div>
   <?php /* .... HIDDEN ................................................................................................  */ ?>	
-
-<div style="display:none"   class="field field_stl">
-                <label class="label"><?= $escaper->escapeHtml(__('product_label_image')) ?>:</label>
-                  <div class="control"> 
-                     <input name="product[product_label_image]" id="product_label_image" 
-                        class="validate-length maximum-length-64 input-text" type="file" 
-                        value="image.png"/>               
-  
-			      </div>
-			   
-			   
-            </div>   
     <div style="display:none" class="field ">
         <label class="label"><?= $escaper->escapeHtml(__('Weight')) ?> (<?= $escaper
                                                                             ->escapeHtml($weightUnit) ?>):</label>
