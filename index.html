@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css" />
     <link rel="stylesheet" href="assets/css/scrollup.css" />
     <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/sweetalert2.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Sacramento" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 
@@ -162,8 +163,8 @@
     <section class="experience-section experience bg-1" id="experience">
         <div class="container">
             <div class="row"><div class="col-12 text-center p-4"><h2 class="head-title">Experience</h2></div></div>
-            <div class="row experiences row experiences gap-5">
-                <div class="col-md-6">
+            <div class="row experiences row experiences">
+                <div class="col-md-6 mb-5">
                     <div class="working-wrap">
                         <div class="title-icon">
                             <div class="working-icon">
@@ -181,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-5">
                     <div class="working-wrap">
                         <div class="title-icon">
                             <div class="working-icon">
@@ -258,6 +259,35 @@
                             
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact-section py-5 bg-contact">
+        <div class="container px-4">
+            <div class="row">
+                <!-- <img src="./assets/images/Contactus.jpg" alt=""> -->
+               
+                <div class="col-md-6 p-5 mt-5 mb-5 m-auto c-form">
+                    <h2 class="mb-5 head-title text-center">Contact Us</h2>
+                    <form id="my-form" action="https://formspree.io/f/xeqyllkq" method="POST">
+                        <div class="form-group pb-3">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+                        </div>
+                        <div class="form-group pb-3">
+                          <label for="email">Email address</label>
+                          <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group pb-3">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                          </div>
+                        <button class="btn btn-primary">Submit</button>
+                        <span class="my-form-status" id="my-form-status"></span>
+                      </form>
                 </div>
             </div>
         </div>
@@ -438,6 +468,7 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/scrollup.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/sweetalert2.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 </body>
 

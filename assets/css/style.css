@@ -1057,3 +1057,15 @@ h2.myname {
       bottom: var(--distance, 10rem);
     }
   }
+
+
+
+.bg-contact{
+    background-image: url("../images/contact2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat ;
+}
+.c-form {
+    border-radius: 10px;
+    background-color: #fff;
+}
